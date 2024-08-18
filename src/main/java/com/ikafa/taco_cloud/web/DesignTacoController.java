@@ -15,6 +15,7 @@ import com.ikafa.taco_cloud.entities.Taco;
 import com.ikafa.taco_cloud.entities.TacoOrder;
 import com.ikafa.taco_cloud.enums.Type;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,7 +65,7 @@ public class DesignTacoController {
     }
     
     @PostMapping
-    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(@Valid Taco taco, @ModelAttribute TacoOrder tacoOrder) {
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
         
