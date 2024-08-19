@@ -12,9 +12,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.ikafa.taco_cloud.web.HomeController;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest()
 public class HomeControllerTest {
     
     @Autowired
